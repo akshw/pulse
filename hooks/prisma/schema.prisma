@@ -64,11 +64,5 @@ model ZapRun{
   zap Zap @relation(fields: [zapId], references: [id])
   zapId String
   metadata Json
-  zapRunOutbox ZapRunOutbox?
 }
 
-model ZapRunOutbox{
-  id String @id @default(uuid())
-  zapRun ZapRun @relation(fields: [zapRunId], references: [id])
-  zapRunId String @unique
-}
